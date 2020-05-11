@@ -7,20 +7,6 @@ use PHPUnit\Framework\TestCase;
 
 class MumblerTest extends TestCase
 {
-    /**
-     * @dataProvider provideMumbleLetters
-     */
-    public function testMumbleLetters(string $input, string $expectedOutput): void
-    {
-        $mumbler = new Mumbler();
-
-        self::assertEquals(
-            $expectedOutput,
-            $mumbler->mumbleLetters($input),
-            "When taking \"{$input}\" we should output \"{$expectedOutput}\""
-        );
-    }
-
     public function provideMumbleLetters(): array
     {
         return [
@@ -29,6 +15,26 @@ class MumblerTest extends TestCase
             ['aBCd', "A-Bb-Ccc-Dddd"],
             ['QWERTY', "Q-Ww-Eee-Rrrr-Ttttt-Yyyyyy"],
             ['', ""],
+            [null, ""],
+            ['B', "B"],
+            ['C   ', "C"],
+            ['a  B c', "A-Bb-Ccc"],
         ];
+    }
+
+    /**
+     * @dataProvider provideMumbleLetters
+     * @param string|null $input
+     * @param string $expectedOutput
+     */
+    public function testMumbleLetters(?string $input, string $expectedOutput): void
+    {
+        $mumbler = new Mumbler();
+
+        self::assertEquals(
+            $expectedOutput,
+            $mumbler->mumbleLetters($input),
+            "When taking \"{$input}\" we should output \"{$expectedOutput}\""
+        );
     }
 }

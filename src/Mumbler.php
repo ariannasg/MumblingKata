@@ -4,27 +4,41 @@ namespace Kata\Mumbling;
 
 class Mumbler
 {
-    public function mumbleLetters(string $input): string
+    /**
+     * @param string|null $input
+     * @return string
+     */
+    public function mumbleLetters(?string $input): string
+    {
+        if ($input === null) {
+            return '';
+        }
+
+        return $this->format($input);
+    }
+
+    /**
+     * @param string $input
+     * @return string
+     */
+    private function format(string $input): string
     {
         $output = '';
 
-        if ($input === null) {
-            return $output;
-        }
-
+        $input = str_replace(' ', '', $input);
         $inputLetters = str_split($input);
         $inputSize = count($inputLetters);
 
-        foreach ($inputLetters as $index => $inputLetter) {
-            for($i = 1; $i <= $index + 1; $i++) {
-                if ($i === 1) {
-                    $output .= strtoupper($inputLetter);
+        foreach ($inputLetters as $index => $letter) {
+            for ($i = 0; $i <= $index; $i++) {
+                if ($i === 0) {
+                    $output .= strtoupper($letter);
                 } else {
-                    $output .= strtolower($inputLetter);
+                    $output .= strtolower($letter);
                 }
             }
 
-            if ($index + 1 < $inputSize) {
+            if ($index < $inputSize - 1) {
                 $output .= '-';
             }
         }
