@@ -18,7 +18,10 @@ class MumblerTest extends TestCase
             [null, ""],
             ['B', "B"],
             ['C   ', "C"],
+            ['d ', "D"],
             ['a  B c', "A-Bb-Ccc"],
+            [' aB C d', "A-Bb-Ccc-Dddd"],
+            ['  QWERTY  ', "Q-Ww-Eee-Rrrr-Ttttt-Yyyyyy"],
         ];
     }
 
