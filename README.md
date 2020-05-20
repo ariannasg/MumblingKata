@@ -1,5 +1,4 @@
 [![CI Workflow](https://github.com/ariannasg/MumblingKata/workflows/CI%20Workflow/badge.svg)](https://github.com/ariannasg/MumblingKata/actions?query=workflow%3A%22CI+Workflow%22)
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](.github/CONTRIBUTING.md)
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
 
 # Mumbling Kata
@@ -8,7 +7,6 @@
 * [Objectives](#objectives)
 * [Local setup](#local-setup)
 * [Testing](#testing)
-* [Contributing](#contributing)
 * [License](#license)
 
 ## Description
@@ -53,9 +51,6 @@ Command for running all tests:
 ```
 make test
 ```
-
-## Contributing
-Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for understanding the code of conduct.
 
 ## License
 This project is licensed under the terms of the MIT License.
